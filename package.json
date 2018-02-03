@@ -1,0 +1,15 @@
+{
+  "name": "due-date-calculator",
+  "version": "1.0.0",
+  "description": "A due date calculator for a bug reporting system.",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test",
+    "start": "node main.js"
+  },
+  "author": "Attila B. Gál",
+  "license": "ISC"
+}
