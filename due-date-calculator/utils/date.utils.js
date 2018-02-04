@@ -4,14 +4,12 @@ const EOB = 17;
 const OOB = 9;
 
 const isWorkingDay = (dateTime) => {
-    const day = dateTime.getDay();
-    
+    const day = dateTime.getUTCDay();
     return day !== SATURDAY && day !== SUNDAY;
 };
 
 const isWorkingHour = (dateTime) => {
-    const hour = dateTime.getHours();
-    
+    const hour = dateTime.getUTCHours();
     return hour >= OOB && hour < EOB;
 };
 
