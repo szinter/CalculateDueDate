@@ -1,20 +1,20 @@
 const dateUtils = require('./date.utils');
 const ONE_DAY = 86400000;
 
-const nextDay = (baseDay) => {
+const getNextDay = (baseDay) => {
     const todayInMilliSecunds = baseDay.getTime();
     const nextDayInMillisecunds = todayInMilliSecunds + ONE_DAY;
     
     return new Date(nextDayInMillisecunds);
 };
 
-const nextWorkDay = (baseDay) => {
-    const tomorrow = nextDay(baseDay);
+const getNextWorkDay = (baseDay) => {
+    const tomorrow = getNextDay(baseDay);
     
     if (dateUtils.isWorkingDay(tomorrow)) {
         return tomorrow;
     } else {
-        return nextWorkDay(tomorrow);
+        return getNextWorkDay(tomorrow);
     }
 };
 
@@ -22,13 +22,13 @@ const getTargetDay = (dateTime, extraWorkDays) => {
     let targetDay = dateTime;
     
     for (let count = 0; count <= extraWorkDays; count++) {
-        targetDay = nextWorkDay(targetDay);
+        targetDay = getNextWorkDay(targetDay);
     }
     return targetDay;
 };
 
 module.exports = {
-    nextWorkDay: nextWorkDay,
-    nextDay: nextDay,
+    getNextWorkday: getNextWorkDay,
+    getNextDay: getNextDay,
     getTargetDay: getTargetDay
 };
