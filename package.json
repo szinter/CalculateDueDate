@@ -7,9 +7,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "test",
+    "test": "mocha",
     "start": "node main.js"
   },
   "author": "Attila B. Gál",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.0"
+  }
 }
