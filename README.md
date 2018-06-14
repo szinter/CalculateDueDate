@@ -1,5 +1,4 @@
 # CalculateDueDate
-HW for Emarsys
 
 ## Guide
 Start usage with the following commands:
